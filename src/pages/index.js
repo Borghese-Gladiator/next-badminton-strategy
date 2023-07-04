@@ -1,16 +1,15 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
 
-import DrawingArea from '@/components/DrawingArea'
-import ShapesSidebar from '@/components/DraggableArea'
+import ShapesSidebar from '@/components/DraggableArea';
+import DrawingArea from '@/components/DrawingArea';
+import SnapshotActionBar from '@/components/SnapshotActionBar';
 import useDimensions from '@/hooks/useDimensions';
 import { LinesProvider } from '@/hooks/useLines';
-import SnapshotActionBar from '@/components/SnapshotActionBar';
-import { AppBar, Box, Typography } from '@mui/material'
+import { AppBar, Box, Grid, Typography } from '@mui/material';
 
-import styles from '@/styles/Home.module.css'
-
+import styles from '@/styles/Home.module.css';
 
 export default function Home() {
   const [divRef, { width, height }] = useDimensions();
@@ -26,35 +25,40 @@ export default function Home() {
       </Head>
       <LinesProvider>
         <main>
-          <Box
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gridTemplateRows: '1fr 3fr 1fr',
-              gap: 1,
-              gridTemplateAreas: `"header header header header"
-                                "main main main sidebar"
-                                "footer footer footer footer"`,
-              minHeight: '100vh',
-            }}
-          >
-            <Box sx={{ gridArea: 'header', bgcolor: 'primary.main' }}>
+          <Grid container sx={{ minHeight: '100vh' }}>
+            <Grid item xs={12} sx={{ bgcolor: 'primary.main' }}>
               <Box p={1}>
                 <Typography variant="h1">Badminton Strategy</Typography>
-                <Typography variant="subtitle1">こういう贈物が好きでか？</Typography>
+                <Typography variant="subtitle1">
+                  こういうAPPがプレゼントとだと思いますか？　どういう贈物が好きでか？
+                </Typography>
               </Box>
-            </Box>
-            <Box sx={{ gridArea: 'main', bgcolor: 'secondary.main' }} ref={divRef}>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={8}
+              sx={{ bgcolor: 'primary.main' }}
+              ref={divRef}
+            >
               <DrawingArea width={width} height={height} />
               <SnapshotActionBar />
-            </Box>
-            <Box sx={{ gridArea: 'sidebar', bgcolor: 'error.main' }} ref={divRef2}>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={4}
+              sx={{ bgcolor: 'primary.main' }}
+              ref={divRef2}
+            >
               <ShapesSidebar width={width2} height={height2} />
-            </Box>
-            <Box sx={{ gridArea: 'footer', bgcolor: 'warning.main' }}>Footer</Box>
-          </Box>
+            </Grid>
+            <Grid item xs={12}>
+              <Box sx={{ bgcolor: 'warning.main' }}>Footer</Box>
+            </Grid>
+          </Grid>
         </main>
       </LinesProvider>
     </>
-  )
+  );
 }

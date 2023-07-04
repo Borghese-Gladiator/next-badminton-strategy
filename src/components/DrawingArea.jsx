@@ -4,12 +4,12 @@ import { Layer, Line, Stage, Image } from 'react-konva';
 import useImage from 'use-image';
 import useLines from '@/hooks/useLines';
 
-
 const BadmintonCourtImage = () => {
-  const [image] = useImage('https://usercontent.one/wp/www.badmintonspeak.com/wp-content/uploads/2022/10/37-1068x701.jpg?media=1680935088');
+  const [image] = useImage(
+    'https://usercontent.one/wp/www.badmintonspeak.com/wp-content/uploads/2022/10/37-1068x701.jpg?media=1680935088'
+  );
   return <Image image={image} />;
 };
-
 
 const DrawingArea = ({ width, height, onClearLines, clearLines }) => {
   const [lines, setLines] = useLines();
@@ -17,8 +17,8 @@ const DrawingArea = ({ width, height, onClearLines, clearLines }) => {
   const isDrawing = useRef(false);
 
   useEffect(() => {
-    //loadImage();  
-  }, [clearLines])
+    //loadImage();
+  }, [clearLines]);
 
   const handleMouseDown = (e) => {
     isDrawing.current = true;
@@ -45,7 +45,6 @@ const DrawingArea = ({ width, height, onClearLines, clearLines }) => {
       lines.splice(lines.length - 1, 1, lastLine);
       setLines(lines.concat());
     }
-
   };
 
   const handleMouseUp = () => {
@@ -78,8 +77,7 @@ const DrawingArea = ({ width, height, onClearLines, clearLines }) => {
         ))}
       </Layer>
     </Stage>
+  );
+};
 
-  )
-}
-
-export default DrawingArea
+export default DrawingArea;

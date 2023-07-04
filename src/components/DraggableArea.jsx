@@ -35,9 +35,7 @@ const ShapesSidebar = ({ width, height }) => {
         />
       </Layer>
     </Stage>
-
   );
-
-}
+};
 
 export default ShapesSidebar;
