@@ -1,3 +1,16 @@
+# Badminton Strategy
+App to develop strategy for badminton
+
+## Steps
+- `yarn create next-app --javascript --no-tailwind --eslint --no-app --src-dir --import-alias "@/*" --use-yarn next-badminton-strategy`
+- `yarn add react-konva`
+- `yarn add react-dnd react-dnd-html5-backend`
+- `yarn add @mui/material @emotion/react @emotion/styled`
+- add example code from react-konva for dragging shapes
+- `yarn add -D eslint-plugin-simple-import-sort@latest`
+- add linting rules for imports in `.eslintrc.json`
+
+# NEXT.JS README
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
