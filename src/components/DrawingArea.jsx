@@ -1,7 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
-import { Layer, Line, Stage } from 'react-konva';
+import { Layer, Line, Stage, Image } from 'react-konva';
 
 import useCurrentDimensions from '@/hooks/useDimensions';
+
+import useImage from 'use-image';
+
+const BadmintonCourtImage = () => {
+  const [image] = useImage('https://usercontent.one/wp/www.badmintonspeak.com/wp-content/uploads/2022/10/37-1068x701.jpg?media=1680935088');
+  return <Image image={image} />;
+};
+
 
 const DrawingArea = ({ width, height, onClearLines, clearLines }) => {
 
@@ -44,8 +52,7 @@ const DrawingArea = ({ width, height, onClearLines, clearLines }) => {
     isDrawing.current = false;
   };
 
-  console.log(width, height);
-
+  // Components are drawn on the canvas in order - this means the first component is the bottom-most
   return (
     <Stage
       width={width}
@@ -55,6 +62,7 @@ const DrawingArea = ({ width, height, onClearLines, clearLines }) => {
       onMouseup={handleMouseUp}
     >
       <Layer>
+        <BadmintonCourtImage />
         {lines.map((line, i) => (
           <Line
             key={i}
