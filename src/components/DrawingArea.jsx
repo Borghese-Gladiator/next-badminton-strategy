@@ -11,9 +11,7 @@ const BadmintonCourtImage = () => {
 };
 
 
-const DrawingArea = ({ width, height, onClearLines, clearLines }) => {
-
-  const [lines, setLines] = useState([]);
+const DrawingArea = ({ lines, setLines, width, height, onClearLines, clearLines }) => {
   const isDrawing = useRef(false);
 
   useEffect(() => {
