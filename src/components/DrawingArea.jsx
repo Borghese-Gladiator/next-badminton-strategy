@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Layer, Line, Stage, Image } from 'react-konva';
 
-import useCurrentDimensions from '@/hooks/useDimensions';
-
 import useImage from 'use-image';
+import useLines from '@/hooks/useLines';
+
 
 const BadmintonCourtImage = () => {
   const [image] = useImage('https://usercontent.one/wp/www.badmintonspeak.com/wp-content/uploads/2022/10/37-1068x701.jpg?media=1680935088');
@@ -11,7 +11,9 @@ const BadmintonCourtImage = () => {
 };
 
 
-const DrawingArea = ({ lines, setLines, width, height, onClearLines, clearLines }) => {
+const DrawingArea = ({ width, height, onClearLines, clearLines }) => {
+  const [lines, setLines] = useLines();
+
   const isDrawing = useRef(false);
 
   useEffect(() => {
