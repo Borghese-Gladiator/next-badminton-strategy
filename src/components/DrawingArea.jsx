@@ -1,7 +1,8 @@
-import { useEffect, useRef } from 'react';
-import { Layer, Line, Stage, Image } from 'react-konva';
-
 import useImage from 'use-image';
+
+import { useEffect, useRef } from 'react';
+import { Image, Layer, Line, Stage } from 'react-konva';
+
 import useLines from '@/hooks/useLines';
 
 const BadmintonCourtImage = () => {

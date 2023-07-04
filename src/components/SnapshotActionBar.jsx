@@ -1,7 +1,9 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+
 import { Box, Button, Paper } from '@mui/material';
-import useLines from '@/hooks/useLines';
+
 import useKeyPress from '@/hooks/useKeyPress';
+import useLines from '@/hooks/useLines';
 
 const SnapshotActionBar = () => {
   const [lines, setLines] = useLines();

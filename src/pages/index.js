@@ -1,14 +1,15 @@
 import { useMemo, useState } from 'react';
+
 import Head from 'next/head';
 import Image from 'next/image';
+
+import { AppBar, Box, Grid, Typography } from '@mui/material';
 
 import ShapesSidebar from '@/components/DraggableArea';
 import DrawingArea from '@/components/DrawingArea';
 import SnapshotActionBar from '@/components/SnapshotActionBar';
 import useDimensions from '@/hooks/useDimensions';
 import { LinesProvider } from '@/hooks/useLines';
-import { AppBar, Box, Grid, Typography } from '@mui/material';
-
 import styles from '@/styles/Home.module.css';
 
 export default function Home() {
