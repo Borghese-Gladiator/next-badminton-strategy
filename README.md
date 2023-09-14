@@ -1,16 +1,36 @@
 # Badminton Strategy
+
 App to develop strategy for badminton
 
-## Steps
+
+## To Do
+- [ ] - deployment to Vercel
+- [X] - save drawings as frames
+- [X] - arrow keys support (left, right, ctrl+s, delete)
+- [ ] - draggable player icons on court for Singles and Doubles
+- [ ] - mobile support
+- [ ] - persist state via serverless function
+- [ ] - magic links to access server state
+
+## Backlog
+- [ ] - add pre-built components to drag and drop (Birdie)
+- [ ] - fix occasional bug `TypeError: Cannot read properties of null (reading 'offsetWidth')`
+
+
+## Initialize Steps
 - `yarn create next-app --javascript --no-tailwind --eslint --no-app --src-dir --import-alias "@/*" --use-yarn next-badminton-strategy`
 - `yarn add react-konva`
 - `yarn add react-dnd react-dnd-html5-backend`
 - `yarn add @mui/material @emotion/react @emotion/styled`
 - add example code from react-konva for dragging shapes
-- `yarn add -D eslint-plugin-simple-import-sort@latest`
-- add linting rules for imports in `.eslintrc.json`
+- `yarn add -D @trivago/prettier-plugin-sort-imports`
+- add formatting rules for code and imports in `.prettierrc.json`, `.prettierrcignore`, and `.eslintrc.json`
+
+## Commands
+- format: `yarn run prettier --write .`
 
 # NEXT.JS README
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

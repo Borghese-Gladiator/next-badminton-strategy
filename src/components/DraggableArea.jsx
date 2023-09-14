@@ -5,6 +5,12 @@ import { AppBar, Box, Typography } from '@mui/material';
 
 import useDimensions from '@/hooks/useDimensions';
 
+/*
+const image = new window.Image();
+image.src = badmintonCourtSrc;
+return <Image image={image} />;
+*/
+
 const ShapesSidebar = ({ width, height }) => {
   const [state, setState] = useState({
     isDragging: false,
